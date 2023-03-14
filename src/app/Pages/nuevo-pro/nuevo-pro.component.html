@@ -1,0 +1,91 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-title>
+      <h1 class="titulo-tolbar"><ion-icon (click)="back()" name="arrow-back-outline" ></ion-icon>Registrar una Producto</h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col size="12" >
+      <ion-card class="card-buscar">
+        <ion-icon name="search-outline" class="icono-buscar"></ion-icon>
+        <ion-input placeholder="Ingrese el nombre del producto" type="email" class="input-buscar"></ion-input>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <div *ngIf="seleccionCat == false">
+    <div *ngFor="let Categoria of categorias">
+      <ion-row>
+          <ion-col size="12" >
+            <ion-card class="cat" (click)="selectNomCat(Categoria.nombreCat)">
+              <h5 class="ico2" color="dark"><FONT color="black"> <b>Nombre: </b> {{Categoria.nombreCat}}</FONT></h5>
+              <h5 class="ico2" color="dark"><FONT color="black"><b>Descripcion: </b>{{Categoria.descripcion}}</FONT></h5>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+    </div>
+  </div>
+      <div class="contaier-login" *ngIf="seleccionCat == true">
+          <ion-grid>
+              <ion-row>
+                  <ion-col>
+                      <h1>Nuevo Producto</h1>
+                  </ion-col>
+              </ion-row>
+              <ion-row>
+                  <ion-col>
+                      <ion-list>
+                        <ion-item>
+                            <ion-icon name="clipboard-outline" class="icon-login"></ion-icon>
+                            <ion-input  type="email" [(ngModel)]="Producto.nombre" required placeholder="nombre del producto"></ion-input>
+                        </ion-item>
+                          <br />
+                        <ion-item>
+                          <ion-icon name="clipboard-outline" class="icon-login"></ion-icon>
+                          <ion-input  type="email" [(ngModel)]="Producto.precio" required placeholder="precio del producto"></ion-input>
+                      </ion-item>
+                        <br />
+                        <ion-item>
+                          <ion-icon name="clipboard-outline" class="icon-login"></ion-icon>
+                          <ion-input  type="text" [(ngModel)]="Producto.cantidad" required placeholder="Cantidad en existencia"></ion-input>
+                      </ion-item>
+                      <ion-item>
+                        <ion-icon name="clipboard-outline" class="icon-login"></ion-icon>
+                        <ion-input  type="text" [(ngModel)]="Producto.cantidadMax" required placeholder="la cantidad maxima que puede tener"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                      <ion-icon name="clipboard-outline" class="icon-login"></ion-icon>
+                      <ion-input  type="text" [(ngModel)]="Producto.cantidadMed" required placeholder="Ingrese una cantidad para alertar de agoto"></ion-input>
+                  </ion-item>
+                      </ion-list>
+                  </ion-col>
+              </ion-row>
+              <ion-row>
+                  <ion-col>
+                      <ion-button type="submit" fill="solid" (click)="registrarProductos()" expand="full">
+                          Registrar
+                      </ion-button>
+                  </ion-col>
+              </ion-row>
+          </ion-grid>
+      </div>
+
+      <br><br><br> <br><br><br>
+
+      <div *ngFor="let Producto of productos" class="cont">
+        <ion-row>
+            <ion-col size="12" >
+              <ion-card class="prod">
+                <h5 class="ico2" color="dark"><FONT color="black"> <b>Nombre: </b> {{Producto.nombre}}</FONT></h5>
+                <h5 class="ico2" color="dark"><FONT color="black"><b>cantidad: </b>{{Producto.cantidad}}</FONT></h5>
+                <h5 class="ico2" color="dark"><FONT color="black"> <b>precio: </b> {{Producto.precio}}</FONT></h5>
+                <h5 class="ico2" color="dark"><FONT color="black"><b>Categoria: </b>{{Producto.categoriaID}}</FONT></h5>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+      </div>
+
+
+</ion-content>

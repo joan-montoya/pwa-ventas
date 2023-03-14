@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-title>
+      
+      <h1 class="titulo-tolbar"><ion-icon (click)="back()" name="arrow-back-outline" ></ion-icon>Registrar una categoria</h1>
+      
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+      <div class="contaier-login">
+          <ion-grid>
+              <ion-row>
+                  <ion-col>
+                      <h1>Nueva Categoria</h1>
+                  </ion-col>
+              </ion-row>
+              <ion-row>
+                  <ion-col>
+                      <ion-list>
+                        <ion-item>
+                            <ion-icon name="clipboard-outline" class="icon-login"></ion-icon>
+                            <ion-input  type="email" [(ngModel)]="Categoria.nombreCat" required placeholder="Nombre de la categoria"></ion-input>
+                        </ion-item>
+                          <br />
+                          <ion-item>
+                            <ion-icon name="clipboard-outline" class="icon-login"></ion-icon>
+                            <ion-input  type="text" [(ngModel)]="Categoria.descripcion" required placeholder="Descripcion"></ion-input>
+                        </ion-item>
+                      </ion-list>
+                  </ion-col>
+              </ion-row>
+              <ion-row>
+                  <ion-col>
+                      <ion-button type="submit" fill="solid" (click)="registrarCategoria()" expand="full">
+                          Registrar
+                      </ion-button>
+                  </ion-col>
+              </ion-row>
+          </ion-grid>
+      </div>
+
+      <br><br><br> <br><br><br>
+
+      <div *ngFor="let Categoria of categorias" class="cont">
+        <ion-row>
+            <ion-col size="12" >
+              <ion-card class="cat">
+                <h5 class="ico2" color="dark"><FONT color="black"> <b>Nombre: </b> {{Categoria.nombreCat}}</FONT></h5>
+                <h5 class="ico2" color="dark"><FONT color="black"><b>Descripcion: </b>{{Categoria.descripcion}}</FONT></h5>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+      </div>
+
+
+</ion-content>

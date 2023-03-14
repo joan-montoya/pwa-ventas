@@ -1,0 +1,43 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-content>
+        <ion-list id="inbox-list">
+          <ion-list-header>Sell ​​and register</ion-list-header>
+          <ion-note>sellAndregister.com.mx</ion-note>
+
+          <ion-menu-toggle auto-hide="false" >
+            <ion-item routerDirection="root" [routerLink]="['/Home']" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon slot="start" name="home-outline"></ion-icon>
+              <ion-label>Menu Principal</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false" >
+            <ion-item routerDirection="root" [routerLink]="['/Ventas']" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon slot="start" name="cart-outline"></ion-icon>
+              <ion-label>Modulo de ventas</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false" >
+            <ion-item routerDirection="root" [routerLink]="['/Inventario']"  lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon slot="start" name="cart-outline"></ion-icon>
+              <ion-label>Modulo de Inventario</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false" >
+            <ion-item routerDirection="root"  lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon slot="start" name="cart-outline"></ion-icon>
+              <ion-label>Modulo de Pedidos</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          
+        </ion-list>
+
+        <ion-list id="labels-list">
+          <ion-list-header>Labels</ion-list-header>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

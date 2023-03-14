@@ -1,0 +1,77 @@
+<ion-content>
+
+  <ion-grid class="grid1">
+  
+      <ion-row class="row1">
+          <ion-col>
+  
+          </ion-col>
+      </ion-row>
+  
+      <ion-row class="row2">
+          <ion-col>
+  
+          </ion-col>
+      </ion-row>
+  
+  </ion-grid>
+  
+  <ion-slide>
+      <div class="contaier-login">
+          <ion-grid>
+              <ion-row>
+                  <ion-col>
+                      <h1>Registrate en Sell and Register</h1>
+                  </ion-col>
+              </ion-row>
+              <ion-row>
+                  <ion-col>
+                      <ion-list>
+  
+                        <ion-item>
+                            <ion-icon name="person" class="icon-login"></ion-icon>
+                            <ion-input name="user" [(ngModel)]="Usuario.nombre" type="text" required placeholder="Nombres"></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-icon name="person" class="icon-login"></ion-icon>
+                            <ion-input name="password" [(ngModel)]="Usuario.apellidos" type="text" required placeholder="Apellidos"></ion-input>
+                        </ion-item>
+                        <ion-item>
+                          <ion-icon name="business-outline" class="icon-login"></ion-icon>
+                          <ion-input name="user" [(ngModel)]="Usuario.nombreempresa" type="text" required placeholder="Nombre de la empresa"></ion-input>
+                      </ion-item>
+                      <ion-item>
+                          <ion-icon name="mail-outline" class="icon-login"></ion-icon>
+                          <ion-input name="password" [(ngModel)]="Usuario.email" type="email" required placeholder="Correo"></ion-input>
+                      </ion-item>
+                      <ion-item>
+                        <ion-icon name="help-outline" class="icon-login"></ion-icon>
+                        <ion-input name="user" [(ngModel)]="Usuario.password" type="password" required placeholder="Contraseña"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-icon name="keypad-outline" class="icon-login"></ion-icon>
+                        <ion-input name="password" [(ngModel)]="Usuario.telefono" type="text" required placeholder="Numero de telefono"></ion-input>
+                    </ion-item>
+  
+                      </ion-list>
+                  </ion-col>
+              </ion-row>
+              <ion-row>
+                  <ion-col>
+                    <h3 (click)="avisoB()"><a >Leer aviso de privacidad</a> </h3>
+                    <ion-button *ngIf="avisoc == false" type="submit" (click)="avisoA()" fill="solid" expand="full">Aceptar Politicas</ion-button>
+                      <ion-button *ngIf="avisoc == true" type="submit" (click)="registrarUsuario()" fill="solid" expand="full">
+                          Entrar
+                      </ion-button>
+                  </ion-col>
+              </ion-row>
+              <ion-row>
+                  <ion-col>
+                      <ion-label>
+                          <h3><a href="/Login">¿Tienes una cuenta?</a> </h3>
+                      </ion-label>
+                  </ion-col>
+              </ion-row>
+          </ion-grid>
+      </div>
+  </ion-slide>

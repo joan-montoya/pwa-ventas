@@ -1,0 +1,43 @@
+.v11{
+    background-color: rgb(245, 232, 119);
+    -webkit-transition-duration: 0.9s; /* Safari */
+   transition-duration: 0.9s;
+}
+
+.v11:hover{
+    background-color: rgb(189, 179, 92);
+} 
+.v12{
+    background-color: rgb(113, 155, 247);
+    -webkit-transition-duration: 0.9s; /* Safari */
+   transition-duration: 0.9s;
+}
+
+.v12:hover{
+    background-color: rgb(88, 122, 194);
+} 
+.v13{
+    background-color: rgb(198, 253, 126);
+    -webkit-transition-duration: 0.9s; /* Safari */
+   transition-duration: 0.9s;
+}
+
+.v13:hover{
+    background-color: rgb(136, 177, 83);
+} 
+.ico{
+    height: 65px;
+    width: 65px;
+    align-items: center;
+}
+.ico2{
+    text-align: center;
+}
+.title{
+    text-align: center;
+}
+.cont{
+    position: relative;
+    padding-left: 10%;
+    padding-right: 10%;
+}

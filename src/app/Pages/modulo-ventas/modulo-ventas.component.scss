@@ -1,0 +1,49 @@
+.titulo-tolbar{
+    text-align: center;
+}
+.icono-buscar{
+    position: absolute;
+    top: 20%;
+    left: -32%;
+    width: 70%;
+    height: 70%;
+}
+.input-buscar{
+    position: relative;
+    left: 5%;
+}
+.card-cobrar{
+    position: absolute;
+    background-color: rgb(245, 232, 119);
+    width: 95%;
+    bottom: 0.001%;
+}
+.icono-cobrar{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 10px;
+    left: 75%;
+}
+#global {
+	height: 60%;
+	width: 95%;
+	overflow-y: scroll;
+}
+#mensajes {
+	height: auto;
+}
+.prod{
+    background-color: rgb(245, 205, 119);
+    -webkit-transition-duration: 0.9s; /* Safari */
+   transition-duration: 0.9s;
+   border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+    padding-left: 15px;
+}
+
+.prod:hover{
+    background-color: rgb(175, 149, 91);
+} 
