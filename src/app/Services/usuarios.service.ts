@@ -6,8 +6,8 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 })
 export class UsuariosService {
 
-  //url = 'https://back-login12.herokuapp.com';
-  url = 'http://localhost:3000';
+  url = 'https://back-ventas12.herokuapp.com';
+  //url = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {}
 
