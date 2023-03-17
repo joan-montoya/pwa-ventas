@@ -19,8 +19,9 @@ import { AvisoComponent } from './Pages/aviso/aviso.component';
 import { NuevoProComponent } from './Pages/nuevo-pro/nuevo-pro.component';
 import { NuevaCatComponent } from './Pages/nueva-cat/nueva-cat.component';
 import { InventarioComponent } from './Pages/inventario/inventario.component';
-import { FilterPipe } from './pipes/filter.pipe';
+import { UbicacionComponent } from './Pages/ubicacion/ubicacion.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     NuevaCatComponent,
     NuevoProComponent,
     InventarioComponent,
-    FilterPipe
+    UbicacionComponent
   ],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule,HttpClientModule, ServiceWorkerModule.register('ngsw-worker.js', {
   enabled: !isDevMode(),

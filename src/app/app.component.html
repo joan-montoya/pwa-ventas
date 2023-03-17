@@ -30,6 +30,12 @@
               <ion-label>Modulo de Pedidos</ion-label>
             </ion-item>
           </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false" >
+            <ion-item routerDirection="root" [routerLink]="['/Ubicacion']" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon slot="start" name="location-outline"></ion-icon>
+              <ion-label>Obtener ubicacion</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
           
         </ion-list>
 

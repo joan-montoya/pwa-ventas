@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-title>
+      
+      <h1 class="titulo-tolbar">Ver mi ubicacion</h1>
+      
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <br><br>
+
+  <div class="cont">
+
+    <ion-row>
+
+      <ion-col size="12" >
+        <ion-card class="v11" color="secondary" href="https://www.google.com.mx/maps/place/{{latlon}}W/@{{lat}},{{lon}},17z/data=!3m1!4b1!4m4!3m3!8m2!3d{{lat}}!4d{{lon}}">
+          <p class="ico2"><ion-icon color="dark" name="location-outline" class="ico"></ion-icon></p>
+          <h2 class="ico2" color="dark"><FONT color="black">Ver tu ubicacion en Google Maps</FONT></h2>
+        </ion-card>
+      </ion-col>
+  
+    </ion-row>
+    <h1>Tus cordenadas son: </h1>
+    <h3>latitude: {{lat}} <br> longitude: {{lon}}</h3>
+    <br>
+    <h1>Tus cordenadas son (grados, minutos, segundos)</h1>
+    <h3>latitude: {{GMSlat}} <br> longitude: {{GMSlon}}</h3>
+
+  </div>
+  
+
+</ion-content>
+
+<h1>lat: {{lat}}</h1>
+  <h1>lat: {{lon}}</h1>
+  <h1><a href="https://www.google.com.mx/maps/place/{{latlon}}W/@{{lat}},{{lon}},17z/data=!3m1!4b1!4m4!3m3!8m2!3d{{lat}}!4d{{lon}}">ver en maps</a></h1>

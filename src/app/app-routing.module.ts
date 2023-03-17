@@ -9,6 +9,7 @@ import { AvisoComponent } from './Pages/aviso/aviso.component';
 import { NuevoProComponent } from './Pages/nuevo-pro/nuevo-pro.component';
 import { NuevaCatComponent } from './Pages/nueva-cat/nueva-cat.component';
 import { InventarioComponent } from './Pages/inventario/inventario.component';
+import { UbicacionComponent } from './Pages/ubicacion/ubicacion.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'Nuevo', component: NuevoProComponent },
   { path: 'Nueva', component: NuevaCatComponent },
   { path: 'Inventario', component: InventarioComponent },
+  { path: 'Ubicacion', component: UbicacionComponent },
   {
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
