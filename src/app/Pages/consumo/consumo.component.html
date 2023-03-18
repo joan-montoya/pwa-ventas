@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-title>
+      <h1 class="titulo-tolbar">Rick & Morty api</h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+
+  <br>
+  <h1 class="titulo-tolbar"><b> ¿Conocias los personajes de Rick & Morty?</b></h1>
+  <br><br>
+
+  <ion-row>
+    <div *ngFor="let Cont of data" class="cont">
+      <div class="card" style="width: 18rem;" id="card">
+        <img class="card-img-top" src="{{Cont.image}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{Cont.name}}</h5>
+          <p class="card-text"><b>Type:</b> {{Cont.species}}</p>
+          <p class="card-text"><b>Location:</b> {{Cont.origin.name}}</p>
+        </div>
+      </div>
+      <br><br>
+    </div>
+  </ion-row>
+
+</ion-content>
+  

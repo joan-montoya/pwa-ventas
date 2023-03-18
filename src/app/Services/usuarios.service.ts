@@ -7,12 +7,16 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 export class UsuariosService {
 
   url = 'https://back-ventas12.herokuapp.com';
+  url1 = 'https://rickandmortyapi.com/api/character';
   //url = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {}
 
   obtenerUsuarios() {
     return this.http.get(`${this.url}/usuario`).toPromise();
+    }
+  obtenerApi() {
+    return this.http.get(`${this.url1}`).toPromise();
     }
 
   registrarUsuario(usuario: any) {

@@ -21,6 +21,7 @@ import { NuevaCatComponent } from './Pages/nueva-cat/nueva-cat.component';
 import { InventarioComponent } from './Pages/inventario/inventario.component';
 import { UbicacionComponent } from './Pages/ubicacion/ubicacion.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { ConsumoComponent } from './Pages/consumo/consumo.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     NuevaCatComponent,
     NuevoProComponent,
     InventarioComponent,
-    UbicacionComponent
+    UbicacionComponent,
+    ConsumoComponent
   ],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule,HttpClientModule, ServiceWorkerModule.register('ngsw-worker.js', {
   enabled: !isDevMode(),

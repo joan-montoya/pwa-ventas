@@ -1,0 +1,36 @@
+.v11{
+    background-color: rgb(159, 245, 119);
+    -webkit-transition-duration: 0.9s; /* Safari */
+   transition-duration: 0.9s;
+}
+
+.v11:hover{
+    background-color: rgb(97, 170, 63);
+} 
+.ico{
+    height: 65px;
+    width: 65px;
+    align-items: center;
+}
+.ico2{
+    text-align: center;
+}
+.title{
+    text-align: center;
+}
+.cont{
+    position: relative;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+#card{
+    background-color: rgba(0, 119, 255, 0.61);
+    padding: 10%;
+    border-radius: 10px;
+}
+.titulo-tolbar{
+    text-align: center;
+}
+.card-img-top{
+    border-radius: 14px;
+}
