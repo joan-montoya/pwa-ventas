@@ -16,6 +16,13 @@ export class NuevaCatComponent implements OnInit {
     nombreCat: "",
     descripcion: ""
   }
+  CategoriaCambio = {
+    nombreCat: "",
+    descripcion: ""
+  }
+  idcat = "";
+  cambiarc=false;
+
 
   constructor(public Categorias: UsuariosService, private router: Router) { }
 
@@ -54,6 +61,52 @@ export class NuevaCatComponent implements OnInit {
         })
         
   }
+
+  cambiar(categoria: any){
+    this.CategoriaCambio.nombreCat = categoria.nombreCat;
+    this.CategoriaCambio.descripcion = categoria.descripcion;
+    this.idcat = categoria._id;
+    this.cambiarc = true;
+  }
+
+  borrarPro(id: any){
+    this.Categorias.borrarCategoria(id).then((data: any) =>{
+      Swal.fire({
+        title: 'Se elimino la categoria',
+        position: 'center',
+        icon: 'success',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'OK!',
+        heightAuto: false
+      }).then((result) => {
+        if (result.isConfirmed) {
+          location.reload();
+        }
+      })
+    }).catch((err) =>{
+      console.log(err);
+        })
+  }
+  
+  modificarCategoria(){
+    this.Categorias.modificarCategoria(this.CategoriaCambio,this.idcat).then((data: any) =>{
+      Swal.fire({
+        title: 'Se modifico el producto',
+        position: 'center',
+        icon: 'success',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'OK!',
+        heightAuto: false
+      }).then((result) => {
+        if (result.isConfirmed) {
+          location.reload();
+        }
+      })
+    }).catch((err) =>{
+      console.log(err);
+        })
+  }
+
   back(){
     this.router.navigate(['/Inventario']);
   }

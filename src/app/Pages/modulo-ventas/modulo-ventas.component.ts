@@ -15,6 +15,8 @@ export class ModuloVentasComponent implements OnInit {
   cantidadProd = 0;
   val = 0;
   arrProductos:Array<any> = [];
+  arrProductosini:Array<any> = [];
+  @Input() productosini: any;
 
   constructor(public Productos: UsuariosService) { 
     
@@ -28,6 +30,7 @@ export class ModuloVentasComponent implements OnInit {
     this.Productos.obtenerProducto().then((data: any) =>{
       console.log(data.productos);
       this.productos=data.productos;
+      this.productosini = data.productos;
     }).catch((err) =>{
       console.log(err);
     })
@@ -35,10 +38,29 @@ export class ModuloVentasComponent implements OnInit {
   }
 
   cuenta(valor: any,object:any){
-    this.val =parseInt(valor);
-    this.arrProductos.push(object)
-    this.total = this.total + parseInt(valor);
-    this.cantidadProd = this.cantidadProd + 1;
+    if(object.cantidad > 0){
+      this.arrProductosini.push(object)
+      this.val =parseInt(valor);
+      this.arrProductos.push(object)
+      this.total = this.total + parseInt(valor);
+      this.cantidadProd = this.cantidadProd + 1;
+      this.reducirProducto(object)
+      if(object.cantidadMed == object.cantidad){
+        Swal.fire({
+          icon: 'warning',
+          title: "El producto esta por agotarse",
+          text: ` ${object.cantidad} piezas`,
+          heightAuto: false
+        })
+      }
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: "El producto se agoto",
+        text: ` ${object.cantidad} piezas`,
+        heightAuto: false
+      })
+    }
   }
 
   cobrar(){
@@ -97,9 +119,40 @@ export class ModuloVentasComponent implements OnInit {
     })
   }
 
+  reducirProducto(producto: any){
+    producto.cantidad = parseInt(producto.cantidad) - 1
+    this.Productos.modificarProdcuto(producto).then((data: any) =>{
+    }).catch((err) =>{
+      console.log(err);
+        })
+  }
+
+  cancelarCompra(){
+    for(let x = 0; x < this.arrProductosini.length; x++){
+      this.arrProductosini[x].cantidad = this.arrProductosini[x].cantidad + 1;
+      this.Productos.modificarProdcuto(this.arrProductosini[x]).then((data: any) =>{
+      }).catch((err) =>{
+        console.log(err);
+          })
+    }
+    Swal.fire({
+      icon: 'success',
+      title: "Se regresaron un total de ",
+      text: `$ ${this.arrProductosini.length} Prodcutos`,
+      heightAuto: false,
+      confirmButtonColor: '#3085d6',
+        confirmButtonText: 'OK!',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          location.reload();
+        }
+    })
+  }
+
   limpiar(){
     this.total = 0;
     this.cantidadProd = 0;
+    location.reload();
   }
 
 }

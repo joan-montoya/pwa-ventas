@@ -38,6 +38,13 @@
       </div>
     </div>
   </div>
+
+  <ion-card class="card-cancelar">
+    <h1><FONT color="black"><b>Cancelar Compra</b></FONT></h1>
+    <br><br><br>
+    <ion-icon (click)="cancelarCompra()" name="close-circle-outline" color="dark" class="icono-cancelar"></ion-icon>
+  </ion-card>
+  
     
 
   <div>
@@ -46,9 +53,6 @@
           <h1><FONT color="black">Numero de productos:{{cantidadProd}}</FONT></h1>
           <ion-icon (click)="cobrar()" name="cash-outline" color="dark" class="icono-cobrar"></ion-icon>
         </ion-card>
-      
-
-    
   </div>
 
 </ion-content>

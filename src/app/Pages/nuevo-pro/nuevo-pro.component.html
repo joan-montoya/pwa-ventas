@@ -15,77 +15,133 @@
       </ion-card>
     </ion-col>
   </ion-row>
-  <div *ngIf="seleccionCat == false">
-    <div *ngFor="let Categoria of categorias">
-      <ion-row>
-          <ion-col size="12" >
-            <ion-card class="cat" (click)="selectNomCat(Categoria.nombreCat)">
-              <h5 class="ico2" color="dark"><FONT color="black"> <b>Nombre: </b> {{Categoria.nombreCat}}</FONT></h5>
-              <h5 class="ico2" color="dark"><FONT color="black"><b>Descripcion: </b>{{Categoria.descripcion}}</FONT></h5>
-            </ion-card>
-          </ion-col>
-        </ion-row>
-    </div>
-  </div>
-      <div class="contaier-login" *ngIf="seleccionCat == true">
-          <ion-grid>
-              <ion-row>
-                  <ion-col>
-                      <h1>Nuevo Producto</h1>
-                  </ion-col>
-              </ion-row>
-              <ion-row>
-                  <ion-col>
-                      <ion-list>
-                        <ion-item>
-                            <ion-icon name="clipboard-outline" class="icon-login"></ion-icon>
-                            <ion-input  type="email" [(ngModel)]="Producto.nombre" required placeholder="nombre del producto"></ion-input>
-                        </ion-item>
-                          <br />
-                        <ion-item>
-                          <ion-icon name="clipboard-outline" class="icon-login"></ion-icon>
-                          <ion-input  type="email" [(ngModel)]="Producto.precio" required placeholder="precio del producto"></ion-input>
-                      </ion-item>
-                        <br />
-                        <ion-item>
-                          <ion-icon name="clipboard-outline" class="icon-login"></ion-icon>
-                          <ion-input  type="text" [(ngModel)]="Producto.cantidad" required placeholder="Cantidad en existencia"></ion-input>
-                      </ion-item>
-                      <ion-item>
-                        <ion-icon name="clipboard-outline" class="icon-login"></ion-icon>
-                        <ion-input  type="text" [(ngModel)]="Producto.cantidadMax" required placeholder="la cantidad maxima que puede tener"></ion-input>
-                    </ion-item>
-                    <ion-item>
-                      <ion-icon name="clipboard-outline" class="icon-login"></ion-icon>
-                      <ion-input  type="text" [(ngModel)]="Producto.cantidadMed" required placeholder="Ingrese una cantidad para alertar de agoto"></ion-input>
-                  </ion-item>
-                      </ion-list>
-                  </ion-col>
-              </ion-row>
-              <ion-row>
-                  <ion-col>
-                      <ion-button type="submit" fill="solid" (click)="registrarProductos()" expand="full">
-                          Registrar
-                      </ion-button>
-                  </ion-col>
-              </ion-row>
-          </ion-grid>
-      </div>
 
-      <br><br><br> <br><br><br>
-
-      <div *ngFor="let Producto of productos" class="cont">
+  <div *ngIf="modificarPro == false">
+    <div *ngIf="seleccionCat == false">
+      <div *ngFor="let Categoria of categorias">
         <ion-row>
             <ion-col size="12" >
-              <ion-card class="prod">
-                <h5 class="ico2" color="dark"><FONT color="black"> <b>Nombre: </b> {{Producto.nombre}}</FONT></h5>
-                <h5 class="ico2" color="dark"><FONT color="black"><b>cantidad: </b>{{Producto.cantidad}}</FONT></h5>
-                <h5 class="ico2" color="dark"><FONT color="black"> <b>precio: </b> {{Producto.precio}}</FONT></h5>
-                <h5 class="ico2" color="dark"><FONT color="black"><b>Categoria: </b>{{Producto.categoriaID}}</FONT></h5>
+              <ion-card class="cat" (click)="selectNomCat(Categoria.nombreCat)">
+                <h5 class="ico2" color="dark"><FONT color="black"> <b>Nombre: </b> {{Categoria.nombreCat}}</FONT></h5>
+                <h5 class="ico2" color="dark"><FONT color="black"><b>Descripcion: </b>{{Categoria.descripcion}}</FONT></h5>
               </ion-card>
             </ion-col>
           </ion-row>
       </div>
+    </div>
+        <div class="contaier-login" *ngIf="seleccionCat == true">
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <h1>Nuevo Producto</h1>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-list>
+                          <ion-item>
+                              <ion-icon name="clipboard-outline" class="icon-login"></ion-icon>
+                              <ion-input  type="email" [(ngModel)]="Producto.nombre" required placeholder="nombre del producto"></ion-input>
+                          </ion-item>
+                            <br />
+                          <ion-item>
+                            <ion-icon name="clipboard-outline" class="icon-login"></ion-icon>
+                            <ion-input  type="email" [(ngModel)]="Producto.precio" required placeholder="precio del producto"></ion-input>
+                        </ion-item>
+                          <br />
+                          <ion-item>
+                            <ion-icon name="clipboard-outline" class="icon-login"></ion-icon>
+                            <ion-input  type="text" [(ngModel)]="Producto.cantidad" required placeholder="Cantidad en existencia"></ion-input>
+                        </ion-item>
+                        <ion-item>
+                          <ion-icon name="clipboard-outline" class="icon-login"></ion-icon>
+                          <ion-input  type="text" [(ngModel)]="Producto.cantidadMax" required placeholder="la cantidad maxima que puede tener"></ion-input>
+                      </ion-item>
+                      <ion-item>
+                        <ion-icon name="clipboard-outline" class="icon-login"></ion-icon>
+                        <ion-input  type="text" [(ngModel)]="Producto.cantidadMed" required placeholder="Ingrese una cantidad para alertar de agoto"></ion-input>
+                    </ion-item>
+                        </ion-list>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-button type="submit" fill="solid" (click)="registrarProductos()" expand="full">
+                            Registrar
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+  
+        <br><br><br> <br><br><br>
+  
+        <div *ngFor="let Producto of productos" class="cont">
+          <ion-row>
+              <ion-col size="12" >
+                <ion-card class="prod">
+                  <h5 class="ico2" color="dark"><FONT color="black"> <b>Nombre: </b> {{Producto.nombre}}</FONT></h5>
+                  <h5 class="ico2" color="dark"><FONT color="black"><b>cantidad: </b>{{Producto.cantidad}}</FONT></h5>
+                  <h5 class="ico2" color="dark"><FONT color="black"> <b>precio: </b> {{Producto.precio}}</FONT></h5>
+                  <h5 class="ico2" color="dark"><FONT color="black"><b>Categoria: </b>{{Producto.categoriaID}}</FONT></h5>
+                  <ion-button color="warning" (click)="cambiar(Producto)">Modificar</ion-button>
+                  <ion-button color="danger" (click)="borrarPro(Producto._id)">Borrar</ion-button>
+                </ion-card>
+              </ion-col>
+            </ion-row>
+        </div>
+  </div>
+
+  <div class="contaier-login" *ngIf="modificarPro == true">
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <h1>Nuevo Producto</h1>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-list>
+                  <ion-item>
+                      <ion-icon name="clipboard-outline" class="icon-login"></ion-icon>
+                      <ion-label><b>Nombre: </b></ion-label>
+                      <ion-input  type="email" [(ngModel)]="ProductoCambio.nombre" required placeholder="nombre del producto"></ion-input>
+                  </ion-item>
+                    <br />
+                  <ion-item>
+                    <ion-icon name="clipboard-outline" class="icon-login"></ion-icon>
+                    <ion-label><b>Precio: </b></ion-label>
+                    <ion-input  type="email" [(ngModel)]="ProductoCambio.precio" required placeholder="precio del producto"></ion-input>
+                </ion-item>
+                  <br />
+                  <ion-item>
+                    <ion-icon name="clipboard-outline" class="icon-login"></ion-icon>
+                    <ion-label><b>Cantidad</b></ion-label>
+                    <ion-input  type="text" [(ngModel)]="ProductoCambio.cantidad" required placeholder="Cantidad en existencia"></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-icon name="clipboard-outline" class="icon-login"></ion-icon>
+                  <ion-label><b>Cantidad MAX: </b></ion-label>
+                  <ion-input  type="text" [(ngModel)]="ProductoCambio.cantidadMax" required placeholder="la cantidad maxima que puede tener"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-icon name="clipboard-outline" class="icon-login"></ion-icon>
+                <ion-label><b>Cantidad MIN: </b></ion-label>
+                <ion-input  type="text" [(ngModel)]="ProductoCambio.cantidadMed" required placeholder="Ingrese una cantidad para alertar de agoto"></ion-input>
+            </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-button type="submit" fill="solid" (click)="modificarProducto()" expand="full" color="warning">
+                    Modificar Producto
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</div>
+  
 
 
 </ion-content>

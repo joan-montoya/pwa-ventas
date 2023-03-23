@@ -25,6 +25,13 @@
     top: 10px;
     left: 75%;
 }
+.icono-cancelar{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 10px;
+    left: 75%;
+}
 #global {
 	height: 60%;
 	width: 95%;
@@ -47,3 +54,6 @@
 .prod:hover{
     background-color: rgb(175, 149, 91);
 } 
+.card-cancelar{
+    background-color: rgba(250, 65, 41, 0.582);
+}

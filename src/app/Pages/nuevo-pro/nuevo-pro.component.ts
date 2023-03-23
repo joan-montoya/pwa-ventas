@@ -21,8 +21,18 @@ export class NuevoProComponent implements OnInit {
     cantidadMax: "",
     cantidadMed: ""
   }
+  ProductoCambio = {
+    nombre: "",
+    categoriaID: "",
+    precio: "",
+    cantidad: "",
+    cantidadMax: "",
+    cantidadMed: ""
+  }
 
   seleccionCat = false;
+  modificarPro = false;
+  idpro="";
 
   constructor(public Productos: UsuariosService,public Categorias: UsuariosService, private router: Router) { }
 
@@ -73,6 +83,54 @@ export class NuevoProComponent implements OnInit {
       //console.log(err);
         })
         
+  }
+
+  cambiar(producto: any){
+    this.ProductoCambio.nombre = producto.nombre
+    this.ProductoCambio.cantidad = producto.cantidad
+    this.ProductoCambio.categoriaID = producto.categoriaID
+    this.ProductoCambio.cantidadMax = producto.cantidadMax
+    this.ProductoCambio.cantidadMed = producto.cantidadMed
+    this.ProductoCambio.precio = producto.precio
+    this.modificarPro = true;
+    this.idpro = producto._id
+  }
+
+  modificarProducto(){
+    this.Productos.modificarProdcuto2(this.ProductoCambio,this.idpro).then((data: any) =>{
+      Swal.fire({
+        title: 'Se modifico el producto',
+        position: 'center',
+        icon: 'success',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'OK!',
+        heightAuto: false
+      }).then((result) => {
+        if (result.isConfirmed) {
+          location.reload();
+        }
+      })
+    }).catch((err) =>{
+      console.log(err);
+        })
+  }
+  borrarPro(id: any){
+    this.Productos.borrarProductos(id).then((data: any) =>{
+      Swal.fire({
+        title: 'Se elimino el producto',
+        position: 'center',
+        icon: 'success',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'OK!',
+        heightAuto: false
+      }).then((result) => {
+        if (result.isConfirmed) {
+          location.reload();
+        }
+      })
+    }).catch((err) =>{
+      console.log(err);
+        })
   }
 
   selectNomCat(nombre: any){
