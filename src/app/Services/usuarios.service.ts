@@ -5,8 +5,8 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
   providedIn: 'root'
 })
 export class UsuariosService {
-  url = 'http://localhost:3000';
- // url = 'https://back-ventas12.herokuapp.com';
+  //url = 'http://localhost:3000';
+ url = 'https://back-ventas12.herokuapp.com';
 
   url1 = 'https://rickandmortyapi.com/api/character';
 
