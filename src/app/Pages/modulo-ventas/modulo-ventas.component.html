@@ -31,7 +31,10 @@
         <ion-row>
             <ion-col size="12" >
               <ion-card class="prod" (click)="cuenta(Producto.precio,Producto)">
-                <h1 class="ico2" color="dark"><FONT color="black">${{Producto.precio}} --- <b>{{Producto.nombre}}</b> </FONT></h1>
+                <h1 class="ico2" color="dark">
+                  <ion-icon name="square-outline"  color="dark"></ion-icon>
+                  <FONT color="black"><b>  {{Producto.nombre}}</b> ${{Producto.precio}}</FONT>
+                </h1>
               </ion-card>
             </ion-col>
           </ion-row>
@@ -41,14 +44,14 @@
 
   <ion-card class="card-cancelar">
     <h1><FONT color="black"><b>Cancelar Compra</b></FONT></h1>
-    <br><br><br>
+    <h1><FONT color="black">Numero de productos:{{cantidadProd}}</FONT></h1>
     <ion-icon (click)="cancelarCompra()" name="close-circle-outline" color="dark" class="icono-cancelar"></ion-icon>
   </ion-card>
   
     
 
   <div>
-        <ion-card class="card-cobrar">
+        <ion-card class="card-cobrar1">
           <h1><FONT color="black"><b>Total Venta:</b>{{total}}</FONT></h1>
           <h1><FONT color="black">Numero de productos:{{cantidadProd}}</FONT></h1>
           <ion-icon (click)="cobrar()" name="cash-outline" color="dark" class="icono-cobrar"></ion-icon>

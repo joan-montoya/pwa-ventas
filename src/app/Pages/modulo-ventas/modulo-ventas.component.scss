@@ -18,6 +18,12 @@
     width: 95%;
     bottom: 0.001%;
 }
+.card-cobrar1{
+    position: relative;
+    background-color: rgb(245, 232, 119);
+    bottom: 0.001%;
+    padding-left: 15px;
+}
 .icono-cobrar{
     width: 100px;
     height: 100px;
@@ -56,4 +62,5 @@
 } 
 .card-cancelar{
     background-color: rgba(250, 65, 41, 0.582);
+    padding-left: 10px;
 }
