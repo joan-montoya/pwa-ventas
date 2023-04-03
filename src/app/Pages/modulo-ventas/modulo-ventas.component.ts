@@ -18,6 +18,13 @@ export class ModuloVentasComponent implements OnInit {
   arrProductosini:Array<any> = [];
   @Input() productosini: any;
 
+  Venta = {
+    cantProd : 0,
+    totalVenta: 0,
+    cambio: 0,
+    ingreso: 0,
+  }
+
   constructor(public Productos: UsuariosService) { 
     
   }
@@ -64,6 +71,8 @@ export class ModuloVentasComponent implements OnInit {
   }
 
   cobrar(){
+    this.Venta.totalVenta = this.total;
+    this.Venta.cantProd = this.cantidadProd;
     Swal.fire({
       title: '¿Estas seguro de tu venta?',
       position: 'center',
@@ -98,6 +107,14 @@ export class ModuloVentasComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         if (parseInt(result.value.login) > this.total){
+          this.Venta.ingreso = parseInt(result.value.login)
+          this.Venta.cambio = (parseInt(result.value.login) - this.total)
+          //se ingresa la venta
+          this.Productos.registrarVenta(this.Venta).then((data: any) =>{
+          }).catch((err) =>{
+            console.log(err);
+              })
+
           Swal.fire({
             icon: 'success',
             title: "Cambio del cliente",
@@ -114,7 +131,8 @@ export class ModuloVentasComponent implements OnInit {
         }
         
          //location.reload();
-         this.limpiar();
+         //this.limpiar();
+         console.log(this.Venta)
       }
     })
   }

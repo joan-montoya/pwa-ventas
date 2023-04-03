@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-title>
+      <h1 class="titulo-tolbar"> <ion-icon (click)="back()" name="arrow-back-outline" ></ion-icon>Registro de Ventas</h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+
+  <br><br>
+
+  <ion-row>
+    <div *ngFor="let Cont of ventas; index as i;" class="cont">
+      <div class="card" style="width: 11rem;" id="card">
+        <ion-icon name="receipt-outline" alt="Card image cap" class="iconov"></ion-icon>
+        <div class="card-body">
+          <h5 class="card-title">Venta numero {{i + 1}}</h5>
+          <p class="card-text"><b>Un total de  {{Cont.cantProd}} productos</b> </p>
+          <p class="card-text"><b>Total de venta:</b> {{Cont.totalVenta}}</p>
+          <p class="card-text">El cliente pago con {{Cont.ingreso}} pesos</p>
+          <p class="card-text">Su cambio fue {{Cont.cambio}} pesos</p>
+        </div>
+      </div>
+      <br><br>
+    </div>
+  </ion-row>
+
+
+
+</ion-content>
+  

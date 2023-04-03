@@ -23,6 +23,7 @@ import { UbicacionComponent } from './Pages/ubicacion/ubicacion.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { ConsumoComponent } from './Pages/consumo/consumo.component';
 import { PedidosComponent } from './Pages/pedidos/pedidos.component';
+import { RegistroVentasComponent } from './Pages/registro-ventas/registro-ventas.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { PedidosComponent } from './Pages/pedidos/pedidos.component';
     InventarioComponent,
     UbicacionComponent,
     ConsumoComponent,
-    PedidosComponent
+    PedidosComponent,
+    RegistroVentasComponent
   ],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule,HttpClientModule, ServiceWorkerModule.register('ngsw-worker.js', {
   enabled: !isDevMode(),

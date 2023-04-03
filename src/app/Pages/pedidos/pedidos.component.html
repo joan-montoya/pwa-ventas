@@ -1,3 +1,54 @@
-<p>
-  pedidos works!
-</p>
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-title>
+      <h1 class="titulo-tolbar">Inventario</h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+
+  <br><br>
+
+  <ion-row style="border-bottom: groove;">
+    <ion-col col-3>
+    <ion-label ><b>Nombre</b></ion-label>
+  </ion-col>
+  <ion-col col-3>
+    <ion-label ><b>Precio</b></ion-label>
+  </ion-col>
+  <ion-col col-3>
+    <ion-label ><b>Cantidad</b></ion-label>
+  </ion-col>
+  <ion-col col-3>
+    <ion-label ><b>Cantidad Max</b></ion-label>
+  </ion-col>
+  <ion-col col-3>
+    <ion-label ><b>Restantes</b></ion-label>
+  </ion-col>
+  
+</ion-row>
+
+<ion-row style="border-bottom: groove;" *ngFor="let Producto of productos; index as i;">
+    <ion-col col-3>
+    <ion-label >{{Producto.nombre}}</ion-label>
+  </ion-col>
+  <ion-col col-3>
+    <ion-label >${{Producto.precio}}</ion-label>
+  </ion-col>
+  <ion-col col-3>
+    <ion-label >{{Producto.cantidad}} uds</ion-label>
+  </ion-col>
+  <ion-col col-3>
+    <ion-label >{{Producto.cantidadMax}} uds</ion-label>
+  </ion-col>
+  <ion-col col-3>
+    <ion-label >{{(Producto.cantidadMax - Producto.cantidad )}} uds</ion-label>
+  </ion-col>
+</ion-row>
+
+
+  
+
+</ion-content>
+  

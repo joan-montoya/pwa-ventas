@@ -12,6 +12,7 @@ import { InventarioComponent } from './Pages/inventario/inventario.component';
 import { UbicacionComponent } from './Pages/ubicacion/ubicacion.component';
 import { ConsumoComponent } from './Pages/consumo/consumo.component';
 import { PedidosComponent } from './Pages/pedidos/pedidos.component';
+import { RegistroVentasComponent } from './Pages/registro-ventas/registro-ventas.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'Ubicacion', component: UbicacionComponent },
   { path: 'Api', component: ConsumoComponent},
   { path: 'Pedidos', component: PedidosComponent},
+  { path: 'Regis', component: RegistroVentasComponent},
   {
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
