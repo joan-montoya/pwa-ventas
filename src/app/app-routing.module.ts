@@ -15,7 +15,7 @@ import { PedidosComponent } from './Pages/pedidos/pedidos.component';
 import { RegistroVentasComponent } from './Pages/registro-ventas/registro-ventas.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: LoginComponent },
   { path: 'Home', component: HomeComponent },
   { path: 'Ventas', component: ModuloVentasComponent },
   { path: 'Login', component: LoginComponent },
