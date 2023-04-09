@@ -37,7 +37,6 @@ export class RegistoComponent implements OnInit {
         position: 'center',
         icon: 'success',
         title: 'Registro Completo',
-        text: '<a href="/Aviso">¿Tienes una cuenta?</a>',
         showConfirmButton: true,
         timer: 1500,
         heightAuto: false
@@ -93,6 +92,6 @@ export class RegistoComponent implements OnInit {
 
     //navegamos al aviso de privacidad
     //this.router.navigate(['/Aviso']);
-    window.open('http://localhost:8100/Aviso', '_blank');
+    window.open('https://coruscating-axolotl-fb2979.netlify.app/Aviso', '_blank');
   }
 }
