@@ -17,7 +17,9 @@ export class AppComponent {
 
   @Input() auth: any
 
-  constructor() {}
+  constructor() {
+    this.auth = "false"
+  }
 
   ngOnInit() {
     this.auth = localStorage.getItem('log');
