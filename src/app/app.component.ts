@@ -23,6 +23,11 @@ export class AppComponent {
 
   ngOnInit() {
     this.auth = localStorage.getItem('log');
+    if(this.auth == 'true'){
+
+    }else{
+      this.auth = "false"
+    }
   }
 
 }
